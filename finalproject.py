@@ -20,3 +20,6 @@ teal = Color(0x95E8C4, 1.0)
 
 thinline = LineStyle(1, black)
 noline = LineStyle(0, black)
+
+class pong(App):
+    
