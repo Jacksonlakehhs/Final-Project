@@ -24,4 +24,15 @@ noline = LineStyle(0, black)
 class pong(App):
     def __init__(self):
         super().__init__()
-        bg_asset = ImageAsset("
+        bg_asset = ImageAsset("FINALIMAGE.jpg")
+        bg = Sprite(bg_asset, (-100, -115))        
+        bg.scale = 2
+        
+        
+        
+        
+        
+
+
+myapp = pong()
+myapp.run()
