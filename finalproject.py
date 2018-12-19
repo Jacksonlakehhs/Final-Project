@@ -24,4 +24,4 @@ noline = LineStyle(0, black)
 class pong(App):
     def __init__(self):
         super().__init__()
-        
+        bg_asset = ImageAsset("
