@@ -31,7 +31,7 @@ class Pong(App):
 class Paddle(Sprite):
     paddle = ImageAsset("images/7T12W105.jpg")
     
-
+ 
 
 myapp = Pong()
 myapp.run()
