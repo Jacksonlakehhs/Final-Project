@@ -30,8 +30,8 @@ class Pong(App):
         bg.scale = 2
 class Paddle(Sprite):
     paddle = ImageAsset("images/7T12W105.jpg")
-    
- 
+
+
 
 myapp = Pong()
 myapp.run()
