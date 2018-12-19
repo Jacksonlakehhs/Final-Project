@@ -25,7 +25,7 @@ noline = LineStyle(0, black)
 class Pong(App):
     def __init__(self):
         super().__init__()
-        bg_asset = ImageAsset("istockphoto-114445289-612x612.jpg")
+        bg_asset = ImageAsset("images/istockphoto-114445289-612x612.jpg")
         bg = Sprite(bg_asset, (0, 0))
         bg.scale = 2
         
