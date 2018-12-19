@@ -21,18 +21,16 @@ teal = Color(0x95E8C4, 1.0)
 thinline = LineStyle(1, black)
 noline = LineStyle(0, black)
 
-class pong(App):
+
+class Pong(App):
     def __init__(self):
         super().__init__()
-        bg_asset = ImageAsset("FINALIMAGE.jpg")
-        bg = Sprite(bg_asset, (-100, -115))        
+        bg_asset = ImageAsset("istockphoto-114445289-612x612.jpg")
+        bg = Sprite(bg_asset, (0, 0))
         bg.scale = 2
         
         
-        
-        
-        
 
 
-myapp = pong()
+myapp = Pong()
 myapp.run()
