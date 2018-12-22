@@ -56,11 +56,6 @@ class Paddle(Sprite):
         self.x += self.vx
         self.y += self.vy
 
-        if self.thrust == 5:
-            self.setImage(self.thrustframe)
-            self.thrustframe += 1
-            if self.thrustframe == 2:
-                self.thrustframe = 1
 
 class Pong(App):
     def __init__(self):
