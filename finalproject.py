@@ -25,7 +25,7 @@ class Paddle(Sprite):
     paddle = ImageAsset("images/7T12W105.jpg")
 
     def __init__(self, position):
-        super().__init__(Paddle1.paddle1, position)
+        super().__init__(Paddle.paddle, position)
         self.vx = 1
         self.vy = 1
         self.vr = 0.01
