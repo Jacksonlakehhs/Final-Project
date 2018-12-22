@@ -21,6 +21,41 @@ teal = Color(0x95E8C4, 1.0)
 thinline = LineStyle(1, black)
 noline = LineStyle(0, black)
 
+class Paddle(Sprite):
+    paddle = ImageAsset("images/7T12W105.jpg")
+
+    def __init__(self, position):
+        super().__init__(Paddle1.paddle1, position)
+        self.vx = 1
+        self.vy = 1
+        self.vr = 0.01
+        self.thrust = 0
+        self.thrustframe = 1
+        self.center = (0.5, 0.5)
+
+        Pong.listenKeyEvent("keydown", "right arrow", self.rightarrowKey)
+        Pong.listenKeyEvent('keydown', "left arrow", self.leftarrowKey)
+        Pong.listenKeyEvent('keydown', "up arrow", self.uparrowKey)
+        Pong.listenKeyEvent('keydown', "down arrow", self.downarrowKey)
+        
+                
+    def rightarrowKey(self, event):
+        self.vx+=.2
+        
+    def leftarrowKey(self, event):
+        self.vx+=-.2
+        
+    def uparrowKey(self, event):
+        self.vy+=-.2
+        
+    def downarrowKey(self, event):
+        self.vy+=.2
+
+
+    def step(self):
+        self.x += self.vx
+        self.y += self.vy
+
 
 class Pong(App):
     def __init__(self):
@@ -28,9 +63,6 @@ class Pong(App):
         bg_asset = ImageAsset("images/istockphoto-114445289-612x612.jpg")
         bg = Sprite(bg_asset, (-100, -115))
         bg.scale = 2
-class Paddle(Sprite):
-    paddle = ImageAsset("images/7T12W105.jpg")
-
 
 
 myapp = Pong()
