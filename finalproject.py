@@ -30,8 +30,8 @@ class Paddle(Sprite):
         self.vy = 1
         self.center = (0.5, 0.5)
         self.scale = 0.2
-        self.direction = 1
-        self.go = True
+        self.thrust = 0
+        self.thrustframe = 1
 
         Pong.listenKeyEvent("keydown", "right arrow", self.rightarrowKey)
         Pong.listenKeyEvent('keydown', "left arrow", self.leftarrowKey)
@@ -50,15 +50,11 @@ class Paddle(Sprite):
         
     def downarrowKey(self, event):
         self.vy+=.2
-
-
+    
     def step(self):
-        if paddle.go:
-        paddle.x += paddle.direction
-        if paddle.x + paddle.width > myapp.width or paddle.x < 0:
-            paddle.x -= paddle.direction
-            reverse(ball)
-        
+        if 
+
+
 
 class Pong(App):
     def __init__(self):
