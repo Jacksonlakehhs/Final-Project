@@ -1,6 +1,5 @@
 from ggame import App, Color, LineStyle, Sprite, RectangleAsset, CircleAsset, EllipseAsset, PolygonAsset, Frame
 
-# add your code here \/  \/  \/
 from ggame import App, Color, LineStyle, Sprite
 from ggame import RectangleAsset, CircleAsset, EllipseAsset, PolygonAsset, ImageAsset, SoundAsset
 
@@ -22,7 +21,7 @@ thinline = LineStyle(1, black)
 noline = LineStyle(0, black)
 
 class Paddle(Sprite):
-    paddle = ImageAsset("images/7T12W105.jpg")
+    paddle = RectangleAsset(100, 500, thinline, firyred)
     
 
     def __init__(self, position):
