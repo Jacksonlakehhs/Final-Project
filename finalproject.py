@@ -21,8 +21,7 @@ thinline = LineStyle(1, black)
 noline = LineStyle(0, black)
 
 class Paddle(Sprite):
-    paddle = RectangleAsset(100, 500, thinline, firyred)
-    
+    paddle_asset = RectangleAsset(100, 500, thinline, firyred)
 
     def __init__(self, position):
         super().__init__(Paddle.paddle, position)
@@ -30,6 +29,8 @@ class Paddle(Sprite):
         self.vy = 1
         self.center = (0.5, 0.5)
         self.scale = 0.2
+        paddle.direction = 1
+        paddle.go = true
 
         Pong.listenKeyEvent("keydown", "right arrow", self.rightarrowKey)
         Pong.listenKeyEvent('keydown', "left arrow", self.leftarrowKey)
@@ -50,9 +51,9 @@ class Paddle(Sprite):
         self.vy+=.2
 
 
-    def step(self):
-        self.x += self.vx
-        self.y += self.vy
+    #def step(self):
+        #while Pong.listenKeyEvent = self.uparrowKey:
+            #self.y += 1
 
 
 class Pong(App):
