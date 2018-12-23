@@ -19,6 +19,7 @@ teal = Color(0x95E8C4, 1.0)
 
 thinline = LineStyle(1, black)
 noline = LineStyle(0, black)
+whiteline = LineStyle(1, white)
 
 class Paddle(Sprite):
     paddle_asset = RectangleAsset(100, 500, thinline, firyred)
@@ -29,8 +30,7 @@ class Paddle(Sprite):
         self.vy = 1
         self.center = (0.5, 0.5)
         self.scale = 0.2
-        paddle.direction = 1
-        paddle.go = true
+        
 
         Pong.listenKeyEvent("keydown", "right arrow", self.rightarrowKey)
         Pong.listenKeyEvent('keydown', "left arrow", self.leftarrowKey)
@@ -51,9 +51,7 @@ class Paddle(Sprite):
         self.vy+=.2
 
 
-    #def step(self):
-        #while Pong.listenKeyEvent = self.uparrowKey:
-            #self.y += 1
+#def step(self):
 
 
 class Pong(App):
