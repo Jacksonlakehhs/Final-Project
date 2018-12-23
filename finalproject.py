@@ -25,7 +25,7 @@ class Paddle(Sprite):
     paddle_asset = RectangleAsset(100, 500, thinline, firyred)
 
     def __init__(self, position):
-        super().__init__(Paddle.paddle, position)
+        super().__init__(Paddle.paddle_asset, position)
         self.vx = 1
         self.vy = 1
         self.center = (0.5, 0.5)
