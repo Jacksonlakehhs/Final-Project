@@ -1,5 +1,7 @@
-from ggame import App, Color, LineStyle, Sprite, RectangleAsset, CircleAsset, EllipseAsset, PolygonAsset, Frame
+#This is Jackson's code for the CP final project.
+#sources: the ggame documentation by Eric Dennison, and I worked side by side with Nathan (NathanSub on github).
 
+from ggame import App, Color, LineStyle, Sprite, RectangleAsset, CircleAsset, EllipseAsset, PolygonAsset, Frame
 from ggame import App, Color, LineStyle, Sprite
 from ggame import RectangleAsset, CircleAsset, EllipseAsset, PolygonAsset, ImageAsset, SoundAsset
 
