@@ -1,112 +1,37 @@
-'''
-This is Jackson's final project for computer programming
-Sources:
-https://ggame-dev.readthedocs.io/en/latest/_modules/ggame/asset.html#PolygonAsset
-Nathan and I wrote this at the same time and essentially wrote the same code.
-'''
+from ggame import App, Color, LineStyle, Sprite, RectangleAsset, CircleAsset, EllipseAsset, PolygonAsset, Frame
 
-from ggame import App, Color, LineStyle, Sprite, RectangleAsset, CircleAsset, EllipseAsset, PolygonAsset
-from ggame import ImageAsset, Frame, TextAsset
+from ggame import App, Color, LineStyle, Sprite
+from ggame import RectangleAsset, CircleAsset, EllipseAsset, PolygonAsset, ImageAsset, SoundAsset
 
-white = Color(0xffffff, 1.0)
-clear = Color(0xffffff, 0)
+myapp = App()
+
 red = Color(0xff0000, 1.0)
 green = Color(0x00ff00, 1.0)
 blue = Color(0x0000ff, 1.0)
 black = Color(0x000000, 1.0)
-eye = Color(0xdee5ef, 1.0)
-sand = Color(0xefe49b, 1.0)
-meadowgreen = Color(0x8ed334, 1.0)
-orange = Color(0xe59e19, 1.0)
+grey = Color(0xCDC0B0, 1.0)
+firyred = Color(0xFF3030, 1.0)
+purple = Color(0xBF3EFF, 1.0)
+gold = Color(0xFFD700, 1.0)
+white = Color(0xF8F8FF, 1.0)
+violet = Color(0xd147c5, 1.0)
+teal = Color(0x95E8C4, 1.0)
 
 thinline = LineStyle(1, black)
 noline = LineStyle(0, black)
 whiteline = LineStyle(1, white)
 
+class Paddle(Sprite):
+    paddle_asset = RectangleAsset(100, 500, thinline, firyred)
 
-class Ball(Sprite):
-    ball = CircleAsset(100, whiteline, white)
-    
     def __init__(self, position):
-        super().__init__(Ball.ball, position)
+        super().__init__(Paddle.paddle_asset, position)
         self.vx = 1
         self.vy = 1
-        self.vr = 0.01
+        self.center = (0.5, 0.5)
+        self.scale = 0.2
         self.thrust = 0
         self.thrustframe = 1
-        self.center = (0.5, 0.5)
-        self.scale = 0.2
-        
-    def step(self):
-        self.x += self.vx
-        self.y += self.vy
-        self.rotation += self.vr
-        collision = self.collidingWith
-        
-        if self.thrust == 5:
-            self.setImage(self.thrustframe)
-            self.thrustframe += 1
-        if self.thrustframe == 4:
-            self.thrustframe = 1
-        else:
-            self.setImage(0)
-            
-    def collidingWithSprites(Borderleft, sclass = None):
-        if sclass is None:
-            slist = App.spritelist
-        else:
-            slist = App.getSpritesbyClass(sclass)
-        return list(filter(self.collidingWith, slist))
-        
-    def collidingWithSprites(Borderright, sclass = None):
-        if sclass is None:
-            slist = App.spritelist
-        else:
-            slist = App.getSpritesbyClass(sclass)
-        return list(filter(self.collidingWith, slist))
-
-class Paddle1(Sprite):
-    paddle1 = RectangleAsset(50, 500, thinline, red)
-    
-    def __init__(self, position):
-        super().__init__(Paddle1.paddle1, position)
-        self.vx = 1
-        self.vy = 1
-        self.center = (0.5, 0.5)
-        self.scale = 0.2
-
-        Pong.listenKeyEvent("keydown", "d", self.rightarrowKey)
-        Pong.listenKeyEvent('keydown', "a", self.leftarrowKey)
-        Pong.listenKeyEvent('keydown', "w", self.uparrowKey)
-        Pong.listenKeyEvent('keydown', "s", self.downarrowKey)
-        
-                
-    def rightarrowKey(self, event):
-        self.vx+=.2
-        
-    def leftarrowKey(self, event):
-        self.vx+=-.2
-        
-    def uparrowKey(self, event):
-        self.vy+=-.2
-        
-    def downarrowKey(self, event):
-        self.vy+=.2
-
-
-    def step(self):
-        self.x += self.vx
-        self.y += self.vy
-
-class Paddle2(Sprite):
-    paddle2 = RectangleAsset(50, 500, thinline, red)
-    
-    def __init__(self, position):
-        super().__init__(Paddle2.paddle2, position)
-        self.vx = 1
-        self.vy = 1
-        self.center = (0.5, 0.5)
-        self.scale = 0.2
 
         Pong.listenKeyEvent("keydown", "right arrow", self.rightarrowKey)
         Pong.listenKeyEvent('keydown', "left arrow", self.leftarrowKey)
@@ -125,77 +50,19 @@ class Paddle2(Sprite):
         
     def downarrowKey(self, event):
         self.vy+=.2
+    
+    
 
 
-    def step(self):
-        self.x += self.vx
-        self.y += self.vy
 
-        
-class Borderleft(Sprite):
-    borderleft = RectangleAsset(100, 2000, whiteline, blue)
-
-    def __init__(self, position):
-        super().__init__(Borderleft.borderleft, position)
-        self.vx = 1
-        self.vy = 1
-        self.center = (0.5, 0.5)
-        self.scale = 0.2
-        
-class Borderright(Sprite):
-    borderright = RectangleAsset(100, 2000, whiteline, blue)
-
-    def __init__(self, position):
-        super().__init__(Borderright.borderright, position)
-        self.vx = 1
-        self.vy = 1
-        self.center = (0.5, 0.5)
-        self.scale = 0.2
-        
-class Bordertop(Sprite):
-    bordertop = RectangleAsset(4200, 100, whiteline, green)
-
-    def __init__(self, position):
-        super().__init__(Bordertop.bordertop, position)
-        self.vx = 1
-        self.vy = 1
-        self.center = (0.5, 0.5)
-        self.scale = 0.2
-        
-class Borderbottom(Sprite):
-    borderbottom = RectangleAsset(4200, 100, whiteline, green)
-
-    def __init__(self, position):
-        super().__init__(Borderbottom.borderbottom, position)
-        self.vx = 1
-        self.vy = 1
-        self.center = (0.5, 0.5)
-        self.scale = 0.2
-        
-        
 class Pong(App):
     def __init__(self):
         super().__init__()
-        bg_asset = ImageAsset("images/tenniscourt1.jpg")
+        bg_asset = ImageAsset("images/istockphoto-114445289-612x612.jpg")
         bg = Sprite(bg_asset, (-100, -115))
         bg.scale = 2
-        
-        
-        self.ball = Ball((515, 265))
-        
-        self.paddle1 = Paddle1((97, 265))
-        
-        self.paddle2 = Paddle2((935, 265))
-        
-        self.borderleft = Borderleft((80, 265))
-
-        self.borderright = Borderright((952, 265))
-        
-        self.bordertop = Bordertop((515, 60))
-        
-        self.borderbottom = Borderbottom ((515, 470))
-        
+        self.paddle = Paddle((100, 300))
     
-myapp = Pong()
 
+myapp = Pong()
 myapp.run()
