@@ -53,8 +53,8 @@ class Paddle(Sprite):
     def downarrowKey(self, event):
         self.vy+=.2
     
-    
-
+    def step(self):
+        
 
 
 class Pong(App):
