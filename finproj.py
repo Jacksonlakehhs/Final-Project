@@ -4,7 +4,7 @@
 
 from ggame import App, Color, LineStyle, Sprite, RectangleAsset, CircleAsset, EllipseAsset, PolygonAsset, Frame
 from ggame import App, Color, LineStyle, Sprite
-from ggame import RectangleAsset, CircleAsset, EllipseAsset, PolygonAsset, ImageAsset, SoundAsset
+from ggame import RectangleAsset, CircleAsset, EllipseAsset, PolygonAsset, ImageAsset, 
 from random import *
 
 myapp = App()
@@ -29,10 +29,6 @@ class Ball(Sprite):
     b = RectangleAsset(20, 20, noline, white)
     def __init__(self, position):
         super().__init__(Ball.b, position)
-        self.pointasset = SoundAsset("sounds/point1.mp3")
-        self.popasset = SoundAsset("sounds/pop1.mp3")
-        self.pop = Sound(self.popasset)
-        self.point = Sound(self.pointasset)
         
         if round(randint(0,1)) == 1:
             self.vx = 12
@@ -199,8 +195,6 @@ class Win(Sprite):
     Frame(0,0,600,80), 2, 'horizontal')
     def __init__(self, position):
         super().__init__(Win.w, position)
-        self.victoryasset = SoundAsset('sounds/victory.mp3')
-        self.victory = Sound(self.victoryasset)
         self.fxcenter = self.fycenter = 0.5
         self.image = 0 
     def step(self):
