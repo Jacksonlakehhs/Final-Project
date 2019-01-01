@@ -30,7 +30,18 @@ class ball(Sprite):
     b_asset = CircleAsset(3, noline, gold)
     def __init__(self, position):
         super().__init__(ball.b_asset, position)
-
+    self.vx = 1
+    self.vy = 1
+    
+    def step(self):
+        self.x += self.vx*0.7
+        self.y += self.vy*0.7
+        
+        if self.y < 1:
+            self.vy *= -1
+        elif self.y > Pong.height-20:
+            self.vy *= -1
+    
 
 class Paddle(Sprite):
     paddle_asset = RectangleAsset(100, 500, thinline, firyred)
