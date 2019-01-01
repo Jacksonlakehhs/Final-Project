@@ -1,9 +1,11 @@
-#This is Jackson's code for the CP final project.
+#This is code for the CP final project - Jackson L
 #sources: the ggame documentation by Eric Dennison, and I worked side by side with Nathan (NathanSub on github).
+#documentation can be found here: https://ggame.readthedocs.io/en/latest/ggameapi.html#ggame.event.MouseEvent 
 
 from ggame import App, Color, LineStyle, Sprite, RectangleAsset, CircleAsset, EllipseAsset, PolygonAsset, Frame
 from ggame import App, Color, LineStyle, Sprite
 from ggame import RectangleAsset, CircleAsset, EllipseAsset, PolygonAsset, ImageAsset, SoundAsset
+from random import *
 
 myapp = App()
 
@@ -22,6 +24,12 @@ teal = Color(0x95E8C4, 1.0)
 thinline = LineStyle(1, black)
 noline = LineStyle(0, black)
 whiteline = LineStyle(1, white)
+
+
+class ball(Sprite):
+    b_asset = RectangleAsset(12, 12, noline, gold)
+    def __init__(self, position):
+        super().__init__(ball.b_asset, position)
 
 class Paddle(Sprite):
     paddle_asset = RectangleAsset(100, 500, thinline, firyred)
@@ -63,7 +71,7 @@ class Pong(App):
         bg_asset = ImageAsset("images/istockphoto-114445289-612x612.jpg")
         bg = Sprite(bg_asset, (-100, -115))
         bg.scale = 2
-        self.paddle = Paddle((100, 300))
+        self.paddle = Paddle((100, self.y))
     
 
 myapp = Pong()
