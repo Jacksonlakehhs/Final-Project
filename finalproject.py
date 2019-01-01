@@ -28,6 +28,7 @@ whiteline = LineStyle(1, white)
 
 class ball(Sprite):
     b_asset = CircleAsset(3, noline, gold)
+    
     def __init__(self, position):
         super().__init__(ball.b_asset, position)
     self.vx = 1
@@ -42,6 +43,33 @@ class ball(Sprite):
         elif self.y > Pong.height-20:
             self.vy *= -1
     
+        if self.x < 0:
+                Pong.p2s += 1
+                Pong.screen = 2
+                self.point.play()
+                del Pong.balll[0]
+                self.destroy()
+        elif self.x > Pong.width-20:
+            Pong.p1s += 1
+            Pong.screen = 2
+            self.point.play()
+            del Pong.balll[0]
+            self.destroy()
+                
+        self.pcollide = self.collidingWithSprites(Paddle)
+        if len(self.pcollide):
+            self.pop.play()
+            self.vx = (abs(self.vx)+0.8)
+            self.vy = randint(-3,3)
+                
+        self.pcollide = self.collidingWithSprites(RightPaddle)
+        if len(self.pcollide):
+            self.pop.play()
+            self.vx = ((abs(self.vx)+0.5)*-1)
+            self.vy = randint(-3,3)
+            
+        if len(Pong.balll) == 1:
+            Pong.screen = 1
 
 class Paddle(Sprite):
     paddle_asset = RectangleAsset(100, 500, thinline, firyred)
