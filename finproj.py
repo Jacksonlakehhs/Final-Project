@@ -4,7 +4,7 @@
 
 from ggame import App, Color, LineStyle, Sprite, RectangleAsset, CircleAsset, EllipseAsset, PolygonAsset, Frame
 from ggame import App, Color, LineStyle, Sprite
-from ggame import RectangleAsset, CircleAsset, EllipseAsset, PolygonAsset, ImageAsset, 
+from ggame import RectangleAsset, CircleAsset, EllipseAsset, PolygonAsset, ImageAsset
 from random import *
 
 myapp = App()
