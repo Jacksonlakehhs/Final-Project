@@ -72,7 +72,7 @@ class Pong(App):
         bg_asset = ImageAsset("images/istockphoto-114445289-612x612.jpg")
         bg = Sprite(bg_asset, (-100, -115))
         bg.scale = 2
-        self.paddle = Paddle((100, self.y))
+        self.paddle = Paddle((100, self.height-250))
     
 
 myapp = Pong()
