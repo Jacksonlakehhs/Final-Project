@@ -27,9 +27,10 @@ whiteline = LineStyle(1, white)
 
 
 class ball(Sprite):
-    b_asset = RectangleAsset(12, 12, noline, gold)
+    b_asset = CircleAsset(12, 12, noline, gold)
     def __init__(self, position):
         super().__init__(ball.b_asset, position)
+
 
 class Paddle(Sprite):
     paddle_asset = RectangleAsset(100, 500, thinline, firyred)
@@ -61,7 +62,7 @@ class Paddle(Sprite):
     def downarrowKey(self, event):
         self.vy+=.2
     
-    def step(self):
+    #def step(self):
         
 
 
