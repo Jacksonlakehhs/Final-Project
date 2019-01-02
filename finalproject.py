@@ -4,7 +4,6 @@ Sources:
 https://ggame-dev.readthedocs.io/en/latest/_modules/ggame/asset.html#PolygonAsset
 https://github.com/hackmeehan/Final-Project/blob/master/hackmeehan.py
 '''
-
 from ggame import App, Color, LineStyle, Sprite, RectangleAsset, CircleAsset, EllipseAsset, PolygonAsset
 from ggame import ImageAsset, Frame, Sound, SoundAsset, TextAsset
 
@@ -175,16 +174,7 @@ class Pong(App):
         
         self.borderbottom = Borderbottom ((515, 470))
         
-        Pong.listenKeyEvent("keydown", "space", self.placeball)
-    
-    def placeball(self, event):
-        if len(self.ball) == 0:
-            self.ball.append(Ball((self.width/2, randint(100, self.height-75))))
-    def step(self):  
-        if len(self.ball) == 1:
-            for b in self.getSpritesbyClass(Ball):
-                b.step()
-    
+
 myapp = Pong()
 
 myapp.run()
