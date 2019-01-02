@@ -84,7 +84,6 @@ class Paddle1(Sprite):
         self.vy+=5
 
     def step(self):
-        self.x += self.vx
         self.y += self.vy
 
 
