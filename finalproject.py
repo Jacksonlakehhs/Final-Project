@@ -103,12 +103,14 @@ class Paddle2(Sprite):
     def uparrowKey(self, event):
         self.vy+=-5
         
+        if self.y > 660:
+            y -=10
     def downarrowKey(self, event):
         self.vy+=5
 
     def step(self):
         self.y += self.vy
-
+    
         
 class Borderleft(Sprite):
     borderleft = RectangleAsset(100, 2000, whiteline, blue)
@@ -154,7 +156,6 @@ class Borderbottom(Sprite):
         self.scale = 0.2
         self.visible = False
         
-        
 class Pong(App):
     def __init__(self):
         super().__init__()
@@ -182,6 +183,8 @@ class Pong(App):
             
         if self.paddle2:
             self.paddle2.step()
+    
+    
 
 myapp = Pong()
 
