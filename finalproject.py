@@ -69,8 +69,8 @@ class Paddle1(Sprite):
     
     def __init__(self, position):
         super().__init__(Paddle1.paddle1, position)
-        self.vx = 1
-        self.vy = 1
+        self.vx = 0
+        self.vy = 0
         self.center = (0.5, 0.5)
         self.scale = 0.2
 
@@ -92,8 +92,8 @@ class Paddle2(Sprite):
     
     def __init__(self, position):
         super().__init__(Paddle2.paddle2, position)
-        self.vx = 1
-        self.vy = 1
+        self.vx = 0
+        self.vy = 0
         self.center = (0.5, 0.5)
         self.scale = 0.2
         
