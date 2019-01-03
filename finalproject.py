@@ -79,7 +79,7 @@ class Paddle1(Sprite):
         
     def uparrowKey(self, event):
         if self.y >= 120:
-            self.y += 5
+            self.y -= 5
     
     def downarrowKey(self, event):
         if self.y <= 420:
