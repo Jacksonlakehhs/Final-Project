@@ -73,21 +73,22 @@ class Paddle1(Sprite):
         self.vy = 0
         self.center = (0.5, 0.5)
         self.scale = 0.2
-
+        
         Pong.listenKeyEvent('keydown', "w", self.uparrowKey)
         Pong.listenKeyEvent('keydown', "s", self.downarrowKey)
         
     def uparrowKey(self, event):
         self.vy+=-5
-        
+    
+    if self.y >= 660:
+        self.y -= 11
+    
     def downarrowKey(self, event):
         self.vy+=5
 
     def step(self):
         self.y += self.vy
     
-    if self.y > 660:
-        self.y -= 10
 
 class Paddle2(Sprite):
     paddle2 = RectangleAsset(50, 500, thinline, red)
