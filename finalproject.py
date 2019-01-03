@@ -29,7 +29,6 @@ class Ball(Sprite):
         super().__init__(Ball.ball, position)
         self.vx = 1
         self.vy = 1
-        self.vr = 0.01
         self.thrust = 0
         self.thrustframe = 1
         self.center = (0.5, 0.5)
@@ -53,8 +52,7 @@ class Ball(Sprite):
             self.vx = ((abs(self.vx)+0.5)*-1)
             self.vy = randint(-3,3)
         
-        #if len(Pong.ball) == 1:
-        #    Pong.screen = 1
+    def collidingWithSprites
 
 class Paddle1(Sprite):
     paddle1 = RectangleAsset(50, 500, thinline, red)
