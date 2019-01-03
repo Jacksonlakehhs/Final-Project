@@ -86,8 +86,8 @@ class Paddle1(Sprite):
     def step(self):
         self.y += self.vy
     
-    if y > 660:
-        y -= 10
+    if self.y > 660:
+        self.y -= 10
 
 class Paddle2(Sprite):
     paddle2 = RectangleAsset(50, 500, thinline, red)
