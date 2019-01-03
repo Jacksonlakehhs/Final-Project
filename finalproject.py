@@ -38,17 +38,9 @@ class Ball(Sprite):
     def step(self):
         self.x += self.vx * 0.7
         self.y += self.vy * 0.7
-        self.rotation += self.vr
         collision = self.collidingWith
         
-        if self.thrust == 5:
-            self.setImage(self.thrustframe)
-            self.thrustframe += 1
-        if self.thrustframe == 4:
-            self.thrustframe = 1
-        else:
-            self.setImage(0)
-            
+        
         self.pcollide = self.collidingWithSprites(Paddle2)
         if len(self.pcollide):
             self.pop.play()
@@ -61,8 +53,8 @@ class Ball(Sprite):
             self.vx = ((abs(self.vx)+0.5)*-1)
             self.vy = randint(-3,3)
         
-        if len(Pong.balll) == 1:
-            Pong.screen = 1
+        #if len(Pong.ball) == 1:
+        #    Pong.screen = 1
 
 class Paddle1(Sprite):
     paddle1 = RectangleAsset(50, 500, thinline, red)
@@ -186,6 +178,10 @@ class Pong(App):
         if self.paddle2:
             self.paddle2.step()
     
+    def step(self):
+        if self.ball:
+            self.ball.step()
+            
     
 
 myapp = Pong()
