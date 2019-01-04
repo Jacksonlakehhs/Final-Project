@@ -66,8 +66,11 @@ class Paddle1(Sprite):
         self.vy = 0
         self.center = (0.5, 0.5)
         self.scale = 0.2
+        self.downpressed = False
+        self.uppressed =  False
         
         Pong.listenKeyEvent('keydown', "w", self.uparrowKey)
+        Pong.listenKeyEvent
         Pong.listenKeyEvent('keydown', "s", self.downarrowKey)
         
     def uparrowKey(self, event):
@@ -91,21 +94,30 @@ class Paddle2(Sprite):
         self.vy = 0
         self.center = (0.5, 0.5)
         self.scale = 0.2
+        self.downpressed = False
+        self.uppressed =  False
         
         Pong.listenKeyEvent('keydown', "up arrow", self.uparrowKey)
+        Pong.listenKeyEvent('keyup', "up arrow", self.uparrowKeyisUp)
         Pong.listenKeyEvent('keydown', "down arrow", self.downarrowKey)
         
+    def uparrowKeyisUp(self, event):
+        self.uppressed = False
+
     def uparrowKey(self, event):
-        if self.y >= 120:
-            self.y -= 5
+        self.uppressed = True
+        #if self.y >= 120:
+        #    self.y -= 5
     
     def downarrowKey(self, event):
         if self.y <= 420:
             self.y+=5
 
     def step(self):
-        self.y += self.vy
-    
+        if self.uppressed and self.y >= 120:
+            self.y -= 1
+
+
         
 class Borderleft(Sprite):
     borderleft = RectangleAsset(100, 2000, whiteline, blue)
@@ -172,16 +184,16 @@ class Pong(App):
         
         self.borderbottom = Borderbottom ((515, 470))
     
+
     def step(self):
+        if self.ball:
+            self.ball.step()
+
         if self.paddle1:
             self.paddle1.step()
             
         if self.paddle2:
             self.paddle2.step()
-    
-    def step(self):
-        if self.ball:
-            self.ball.step()
             
     
 
