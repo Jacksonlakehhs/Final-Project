@@ -70,7 +70,7 @@ class Paddle1(Sprite):
         self.uppressed =  False
         
         Pong.listenKeyEvent('keydown', "w", self.uparrowKey)
-        Pong.listenKeyEvent
+        Pong.listenKeyEvent('keyup', "w", self.uparrowKeyisUp)
         Pong.listenKeyEvent('keydown', "s", self.downarrowKey)
         
     def uparrowKey(self, event):
