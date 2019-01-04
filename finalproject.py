@@ -71,11 +71,14 @@ class Paddle1(Sprite):
         
         Pong.listenKeyEvent('keydown', "w", self.uparrowKey)
         Pong.listenKeyEvent('keyup', "w", self.uparrowKeyisUp)
-        Pong
+        Pong.listenKeyEvent('keyup', "s", self.downarrowKeyisDown)
         Pong.listenKeyEvent('keydown', "s", self.downarrowKey)
         
     def uparrowKeyisUp(self, event):
         self.uppressed = False
+    
+    def downarrowKeyisUp(self, event):
+        self.downpressed = False
 
     def uparrowKey(self, event):
         self.uppressed = True
@@ -83,12 +86,15 @@ class Paddle1(Sprite):
         #    self.y -= 5
     
     def downarrowKey(self, event):
-        if self.y <= 420:
-            self.y+=5
+        self.downpressed = True
+        #if self.y <= 420:
+            #self.y+=5
 
     def step(self):
         if self.uppressed and self.y >= 120:
             self.y -= 1
+        if self.downpressed and self.y <= 420:
+            self.y += 1
     
 
 class Paddle2(Sprite):
