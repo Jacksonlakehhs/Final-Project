@@ -27,7 +27,7 @@ class Ball(Sprite):
     
     def __init__(self, position):
         super().__init__(Ball.ball, position)
-        self.vx = 3
+        self.vx = 10
         self.vy = 0
         self.thrust = 0
         self.thrustframe = 1
@@ -44,10 +44,10 @@ class Ball(Sprite):
         hitspaddle1 = self.collidingWith(myapp.paddle1)
     
         if hitspaddle2:
-            self.vx = -3
+            self.vx = -15
         
         elif hitspaddle1:
-            self.vx = 3
+            self.vx = 15
         
         elif collisionright:
             self.vx = 0
