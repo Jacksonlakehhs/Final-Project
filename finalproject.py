@@ -108,7 +108,7 @@ class Paddle2(Sprite):
         
         Pong.listenKeyEvent('keydown', "up arrow", self.uparrowKey)
         Pong.listenKeyEvent('keyup', "up arrow", self.uparrowKeyisUp)
-        Pong.listenKeyEvent('keyup', "s", self.downarrowKeyisUp)
+        Pong.listenKeyEvent('keyup', "down arrow", self.downarrowKeyisUp)
         Pong.listenKeyEvent('keydown', "down arrow", self.downarrowKey)
         
     def uparrowKeyisUp(self, event):
@@ -129,8 +129,8 @@ class Paddle2(Sprite):
             self.y -= 1
         if self.downpressed and self.y <= 420:
             self.y += 1
+    
 
-        
 class Borderleft(Sprite):
     borderleft = RectangleAsset(100, 2000, whiteline, blue)
 
