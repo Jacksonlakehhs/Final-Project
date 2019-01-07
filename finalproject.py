@@ -149,7 +149,7 @@ class Paddle2(Sprite):
     def step(self):
         if self.uppressed and self.y >= 100:
             self.y -= 1
-        if self.downpressed and self.y <= 420:
+        if self.downpressed and self.y <= 440:
             self.y += 1
     
 
@@ -216,7 +216,7 @@ class Pong(App):
         
         self.bordertop = Bordertop((515, 30))
         
-        self.borderbottom = Borderbottom ((515, 470))
+        self.borderbottom = Borderbottom ((515, 500))
     
 
     def step(self):
