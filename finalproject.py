@@ -162,7 +162,7 @@ class Borderleft(Sprite):
         self.vy = 1
         self.center = (0.5, 0.5)
         self.scale = 0.2
-        self.visible = True
+        self.visible = False
 
 class Borderright(Sprite):
     borderright = RectangleAsset(100, 2000, whiteline, blue)
@@ -173,7 +173,7 @@ class Borderright(Sprite):
         self.vy = 1
         self.center = (0.5, 0.5)
         self.scale = 0.2
-        self.visible = True
+        self.visible = False
 
 class Bordertop(Sprite):
     bordertop = RectangleAsset(4200, 100, whiteline, green)
