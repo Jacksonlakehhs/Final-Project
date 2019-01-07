@@ -51,16 +51,16 @@ class Ball(Sprite):
         if hitspaddle2:
             self.vx = -30
             if deletemaybe == 0:
-                self.vy = 1
+                self.vy = 3
             elif deletemaybe == 1:
-                self.vy = -1
+                self.vy = -3
         
         elif hitspaddle1:
             self.vx = 30
             if deletemaybe == 0:
-                self.vy = 1
+                self.vy = 3
             elif deletemaybe == 1:
-                self.vy = -1
+                self.vy = -3
         
         
         elif collisionright:
