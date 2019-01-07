@@ -72,11 +72,9 @@ class Ball(Sprite):
             self.visible = False
         
         elif hitsbordertop:
-            self.vx = self.vx
             self.vy = self.vy*-1
         
         elif hitsborderbott:
-            self.vx = self.vx
             self.vy = self.vy*-1
 
 class Paddle1(Sprite):
