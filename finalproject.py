@@ -19,6 +19,7 @@ eye = Color(0xdee5ef, 1.0)
 sand = Color(0xefe49b, 1.0)
 meadowgreen = Color(0x8ed334, 1.0)
 orange = Color(0xe59e19, 1.0)
+gold = Color(0xffd633, 0.50)
 
 thinline = LineStyle(1, black)
 noline = LineStyle(0, black)
