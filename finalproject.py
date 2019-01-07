@@ -5,6 +5,7 @@ https://ggame-dev.readthedocs.io/en/latest/_modules/ggame/asset.html#PolygonAsse
 '''
 from ggame import App, Color, LineStyle, Sprite, RectangleAsset, CircleAsset, EllipseAsset, PolygonAsset
 from ggame import ImageAsset, Frame, Sound, SoundAsset, TextAsset
+import random
 
 white = Color(0xffffff, 1.0)
 clear = Color(0xffffff, 0)
@@ -44,13 +45,23 @@ class Ball(Sprite):
         hitspaddle1 = self.collidingWith(myapp.paddle1)
         hitsbordertop = self.collidingWith(myapp.bordertop)
         hitsborderbott = self.collidingWith(myapp.borderbottom)
+        
+        deletemaybe = random.randint(0, 1)
     
         if hitspaddle2:
             self.vx = -30
-            self.vy = -1
+            if deletemaybe == 0:
+                self.vy = 1
+            elif deletemaybe == 1:
+                self.vy = -1
+        
         elif hitspaddle1:
             self.vx = 30
-            self.vy = 5
+            if deletemaybe == 0:
+                self.vy = 1
+            elif deletemaybe == 1:
+                self.vy = -1
+        
         
         elif collisionright:
             self.vx = 0
