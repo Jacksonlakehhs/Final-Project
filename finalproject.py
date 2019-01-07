@@ -47,9 +47,10 @@ class Ball(Sprite):
     
         if hitspaddle2:
             self.vx = -30
-        
+            self.vy = -1
         elif hitspaddle1:
             self.vx = 30
+            self.vy = 5
         
         elif collisionright:
             self.vx = 0
@@ -63,6 +64,9 @@ class Ball(Sprite):
             self.vx = self.vx*-1
             self.vy = self.vy*-1
         
+        elif hitsborderbott:
+            self.vx = self.vx*-1
+            self.vy = self.vy*-1
 
 class Paddle1(Sprite):
     paddle1 = RectangleAsset(50, 420, thinline, red)
