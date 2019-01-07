@@ -19,7 +19,7 @@ eye = Color(0xdee5ef, 1.0)
 sand = Color(0xefe49b, 1.0)
 meadowgreen = Color(0x8ed334, 1.0)
 orange = Color(0xe59e19, 1.0)
-gold = Color(0xffd633, 0.50)
+gold = Color(0xffd633, 1)
 
 thinline = LineStyle(1, black)
 noline = LineStyle(0, black)
@@ -81,7 +81,7 @@ class Ball(Sprite):
             self.vy = self.vy*-1
 
 class Paddle1(Sprite):
-    paddle1 = RectangleAsset(60, 333, thinline, red)
+    paddle1 = RectangleAsset(60, 333, thinline, blue)
     
     def __init__(self, position):
         super().__init__(Paddle1.paddle1, position)
@@ -118,7 +118,7 @@ class Paddle1(Sprite):
     
 
 class Paddle2(Sprite):
-    paddle2 = RectangleAsset(60, 333, thinline, red)
+    paddle2 = RectangleAsset(60, 333, thinline, blue)
     
     def __init__(self, position):
         super().__init__(Paddle2.paddle2, position)
