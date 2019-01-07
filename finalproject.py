@@ -184,7 +184,7 @@ class Bordertop(Sprite):
         self.vy = 1
         self.center = (0.5, 0.5)
         self.scale = 0.2
-        self.visible = True
+        self.visible = False
         
 class Borderbottom(Sprite):
     borderbottom = RectangleAsset(4200, 100, whiteline, green)
@@ -195,7 +195,7 @@ class Borderbottom(Sprite):
         self.vy = 1
         self.center = (0.5, 0.5)
         self.scale = 0.2
-        self.visible = True
+        self.visible = False
         
 class Pong(App):
     def __init__(self):
