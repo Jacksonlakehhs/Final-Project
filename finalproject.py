@@ -2,6 +2,8 @@
 Jackson Lake
 Sources:
 https://ggame-dev.readthedocs.io/en/latest/_modules/ggame/asset.html#PolygonAsset
+https://www.pythonforbeginners.com/random/how-to-use-the-random-module-in-python
+Eric Dennison
 '''
 from ggame import App, Color, LineStyle, Sprite, RectangleAsset, CircleAsset, EllipseAsset, PolygonAsset
 from ggame import ImageAsset, Frame, Sound, SoundAsset, TextAsset
