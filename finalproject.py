@@ -52,14 +52,14 @@ class Ball(Sprite):
         deletemaybe = random.randint(0, 1)
     
         if hitspaddle2:
-            self.vx = -35
+            self.vx = -20
             if deletemaybe == 0:
                 self.vy = 3
             elif deletemaybe == 1:
                 self.vy = -3
         
         elif hitspaddle1:
-            self.vx = 35
+            self.vx = 20
             if deletemaybe == 0:
                 self.vy = 3
             elif deletemaybe == 1:
