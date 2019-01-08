@@ -59,7 +59,7 @@ class Ball(Sprite):
                 self.vy = -3
         
         elif hitspaddle1:
-            self.vx = 30
+            self.vx = 20
             if deletemaybe == 0:
                 self.vy = 3
             elif deletemaybe == 1:
