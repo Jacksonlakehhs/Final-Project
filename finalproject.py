@@ -52,7 +52,7 @@ class Ball(Sprite):
         deletemaybe = random.randint(0, 1)
     
         if hitspaddle2:
-            self.vx = -30
+            self.vx = -20
             if deletemaybe == 0:
                 self.vy = 3
             elif deletemaybe == 1:
@@ -112,9 +112,9 @@ class Paddle1(Sprite):
 
     def step(self):
         if self.uppressed and self.y >= 100:
-            self.y -= 1
+            self.y -= 10
         if self.downpressed and self.y <= 440:
-            self.y += 1
+            self.y += 10
     
 
 class Paddle2(Sprite):
@@ -149,9 +149,9 @@ class Paddle2(Sprite):
 
     def step(self):
         if self.uppressed and self.y >= 100:
-            self.y -= 1
+            self.y -= 10
         if self.downpressed and self.y <= 440:
-            self.y += 1
+            self.y += 10
     
 
 class Borderleft(Sprite):
