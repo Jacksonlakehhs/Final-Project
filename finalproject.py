@@ -19,7 +19,7 @@ eye = Color(0xdee5ef, 1.0)
 sand = Color(0xefe49b, 1.0)
 meadowgreen = Color(0x8ed334, 1.0)
 orange = Color(0xe59e19, 1.0)
-gold = Color(0xffd633, 0.80)
+yellow = Color(0xccff00, 1.0)
 
 thinline = LineStyle(1, black)
 noline = LineStyle(0, black)
@@ -27,7 +27,7 @@ whiteline = LineStyle(1, white)
 
 
 class Ball(Sprite):
-    ball = EllipseAsset(100, 100, whiteline, gold)
+    ball = EllipseAsset(100, 100, whiteline, yellow)
     
     def __init__(self, position):
         super().__init__(Ball.ball, position)
@@ -118,7 +118,7 @@ class Paddle1(Sprite):
     
 
 class Paddle2(Sprite):
-    paddle2 = RectangleAsset(60, 333, thinline, blue)
+    paddle2 = RectangleAsset(60, 333, thinline, red)
     
     def __init__(self, position):
         super().__init__(Paddle2.paddle2, position)
@@ -197,7 +197,9 @@ class Borderbottom(Sprite):
         self.center = (0.5, 0.5)
         self.scale = 0.2
         self.visible = False
-        
+
+gamename = TextAsset("Realistic Tennis Simulator", style = "bold 30pt Calibri", width = 230)
+
 class Pong(App):
     def __init__(self):
         super().__init__()
@@ -217,8 +219,9 @@ class Pong(App):
         
         self.bordertop = Bordertop((515, 30))
         
-        self.borderbottom = Borderbottom ((515, 500))
-    
+        self.borderbottom = Borderbottom((515, 500))
+        
+        gamename = ((515, 530))
 
     def step(self):
         if self.ball:
