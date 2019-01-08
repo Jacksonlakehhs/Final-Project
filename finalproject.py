@@ -49,20 +49,20 @@ class Ball(Sprite):
         hitsbordertop = self.collidingWith(myapp.bordertop)
         hitsborderbott = self.collidingWith(myapp.borderbottom)
         
-        deletemaybe = random.randint(0, 1)
+        rand = random.randint(0, 1)
     
         if hitspaddle2:
             self.vx = -20
-            if deletemaybe == 0:
+            if rand == 0:
                 self.vy = 3
-            elif deletemaybe == 1:
+            elif rand == 1:
                 self.vy = -3
         
         elif hitspaddle1:
             self.vx = 20
-            if deletemaybe == 0:
+            if rand == 0:
                 self.vy = 3
-            elif deletemaybe == 1:
+            elif rand == 1:
                 self.vy = -3
         
         
