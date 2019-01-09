@@ -198,7 +198,6 @@ class Borderbottom(Sprite):
         self.scale = 0.2
         self.visible = False
 
-gamename = TextAsset("Realistic Tennis Simulator", style = "bold 30pt Calibri", width = 230)
 
 class Pong(App):
     def __init__(self):
@@ -221,7 +220,6 @@ class Pong(App):
         
         self.borderbottom = Borderbottom((515, 500))
         
-        gamename = ((515, 530))
 
     def step(self):
         if self.ball:
@@ -232,7 +230,7 @@ class Pong(App):
             
         if self.paddle2:
             self.paddle2.step()
-            
+
     
 
 myapp = Pong()
