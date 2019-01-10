@@ -223,9 +223,9 @@ class Pong(App):
 
         self.borderright = Borderright((1100, 265))
         
-        self.bordertop = Bordertop((515, 30))
+        self.bordertop = Bordertop((515, 60))
         
-        self.borderbottom = Borderbottom((515, 500))
+        self.borderbottom = Borderbottom((515, 470))
         
 
     def step(self):
