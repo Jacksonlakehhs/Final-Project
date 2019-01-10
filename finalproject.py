@@ -49,7 +49,7 @@ class Ball(Sprite):
         hitsbordertop = self.collidingWith(myapp.bordertop)
         hitsborderbott = self.collidingWith(myapp.borderbottom)
         
-        rand = random.randint(0, 8)
+        rand = random.randint(0, 3)
     
         if hitspaddle2:
             self.vx = -20
