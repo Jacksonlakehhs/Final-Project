@@ -49,7 +49,7 @@ class Ball(Sprite):
         hitsbordertop = self.collidingWith(myapp.bordertop)
         hitsborderbott = self.collidingWith(myapp.borderbottom)
         
-        rand = random.randint(0, 1)
+        rand = random.randint(0, 8)
     
         if hitspaddle2:
             self.vx = -20
@@ -57,6 +57,10 @@ class Ball(Sprite):
                 self.vy = 3
             elif rand == 1:
                 self.vy = -3
+            elif rand == 2:
+                self.vy = 6
+            elif rand == 3:
+                self.vy = -6
         
         elif hitspaddle1:
             self.vx = 20
@@ -64,7 +68,10 @@ class Ball(Sprite):
                 self.vy = 3
             elif rand == 1:
                 self.vy = -3
-        
+            elif rand == 2:
+                self.vy = 7
+            elif rand == 3:
+                self.vy = -7
         
         elif collisionright:
             self.vx = 0
