@@ -52,7 +52,7 @@ class Ball(Sprite):
         rand = random.randint(0, 3)
     
         if hitspaddle2:
-            self.vx = -20
+            self.vx = -30
             if rand == 0:
                 self.vy = 3
             elif rand == 1:
@@ -63,7 +63,7 @@ class Ball(Sprite):
                 self.vy = -6
         
         elif hitspaddle1:
-            self.vx = 20
+            self.vx = 30
             if rand == 0:
                 self.vy = 3
             elif rand == 1:
